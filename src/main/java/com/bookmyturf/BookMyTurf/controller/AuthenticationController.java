@@ -72,17 +72,6 @@ public class AuthenticationController {
                 .orElseThrow(() -> new TokenRefreshException(requestRefreshToken, "Refresh token not found."));
     }
 
-//    @PostMapping("/logout")
-//    public ResponseEntity<?> logout(@AuthenticationPrincipal User user) {
-//        refreshTokenService.deleteByUserId(user.getId());
-//
-//        Map<String, Object> response = new HashMap<>();
-//        response.put("statusCode", 200);
-//        response.put("message", "Logout successful");
-//        response.put("timestamp", Instant.now());
-//
-//        return ResponseEntity.ok(response);
-//    }
 
     @Transactional
     @PostMapping("/logout")
